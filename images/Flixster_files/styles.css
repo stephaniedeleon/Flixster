@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Header*/
+
+header {
+    height: 65px;
+    display: flex;
+    padding: 0px 20px;
+    border-bottom: 1px solid rgb(57, 57, 57);
+    align-items: center;
+}
+
+header input[type=text] {
+    padding-left: 10px;
+    width: 280px;
+    color: white;
+    background-color: rgb(16, 16, 16);
+    border: 1px solid rgb(57, 57, 57);
+    border-radius: 5px;
+    height: 28px;
+    font-size: 11px;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+header h2 {
+    padding-left: 8px;
+    padding-right:10px;
+    font-size: 29px;
+}
+
+header img {
+    height: 28px;
+}
+
+
+/*List of Movies*/
+
+h3 {
+    font-size: 25px;
+}
+
+.movieslist {
+    padding: 0px 20px;
+}
+
+.row {
+    display: flex;
+    background-color: aliceblue;
+    justify-content: space-between;
+}
+
+.row div {
+    width: 25%;
+}
+
+.row img {
+    width: 260px;
+    border-radius: 6px;
+}
+
+
+
+/*More Button*/
+
+.more {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    color: white;
+    background-color: rgb(16, 16, 16);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
