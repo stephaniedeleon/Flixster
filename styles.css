@@ -51,17 +51,12 @@ h3 {
     padding: 0px 20px;
 }
 
-.row {
-    display: flex;
-    padding-left: 3.1vw; /* To center, must be a better way*/
+.movies-area {
+    text-align: center;    
     padding-bottom: 20px;
 }
 
-.row .col {
-    width: 25%;
-}
-
-.row img {
+.movies-area img {
     width: 20vw;
     border-radius: 6px;
 }
@@ -69,12 +64,10 @@ h3 {
 /*More Button*/
 
 .more {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 button {
-
     color: white;
     background-color: rgb(16, 16, 16);
     border: none;
