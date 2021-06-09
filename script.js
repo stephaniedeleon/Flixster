@@ -24,12 +24,9 @@ async function displayMovies() {
 
 function generateHTML(movie) {
 
-    //const uri = "https://api.themoviedb.org/3/movie/" + movie.id  + "/images?api_key=" + api_key + "&language=en-US"; 
-    const uri = movie.poster_path;
+    const uri = "https://image.tmdb.org/t/p/original/" + movie.poster_path;
     const title = movie.original_title; 
     const vote = movie.vote_average;
-
-    console.log(uri);
 
     moviesArea.innerHTML += `
         <img src="${uri}" alt="${title}"/>
