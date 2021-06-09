@@ -6,6 +6,7 @@ const moreBtn = document.querySelector(".more button");
 const api_key = "9931bbb3d3b44293f08d37aeae81af82";
 
 let page = 1;
+let col = 0;
 
 async function displayMovies() {
 
@@ -30,11 +31,25 @@ function generateHTML(movie) {
 
     moviesArea.innerHTML += `
         <img src="${uri}" alt="${title}"/>
-        <p>${title} ${vote}</p>  
+        <p>${title} ${vote}</p> 
     `;
+
+    /*col++;
+    if (col == 4) {
+        moviesArea.innerHTML += `
+        `
+        col=0;
+        console.log("in");
+    }*/
 }
 
-//moviesForm.addEventListener("submit", getResults);
+//adding more movies...
+
+moreBtn.addEventListener("click", getMore);
+async function getMore() {
+    page++;
+    displayMovies();
+}
 
 window.onload = function () {
     // run your function here to make it execute as soon as the page loads
