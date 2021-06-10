@@ -54,10 +54,12 @@ h3 {
 .movies-area {
     text-align: center;    
     padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .movies-area img {
-    width: 20vw;
+    width: 17vw;
     border-radius: 6px;
 }
 
