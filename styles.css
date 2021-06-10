@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: auto;
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -49,19 +49,90 @@ h3 {
 
 .movieslist {
     padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .movies-area {
-    text-align: center;    
     padding-bottom: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
 }
 
 .movies-area img {
-    width: 17vw;
+    width: 200px;
     border-radius: 6px;
 }
+
+
+.rating {
+    color:darkgray;
+    text-align: left;
+    font-size: 15px;
+}
+
+.movie-title {
+    max-width: 200px;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .movies-area {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .movies-area img {
+        width: 220px;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .movies-area {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .movies-area img {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .movies-area {
+        grid-template-columns: 1fr 1fr;
+    }
+    .movies-area img {
+        width: 210px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .movies-area img {
+        width: 180px;
+    }
+    header input[type=text] {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .movies-area {
+        grid-template-columns: 1fr;
+    }
+    .movies-area img {
+        width: 210px;
+    }
+    header {
+        /*display: none;*/
+    }
+}
+
+
 
 /*More Button*/
 
