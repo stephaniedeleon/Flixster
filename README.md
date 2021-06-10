@@ -48,6 +48,8 @@ Add your response here
 ### Open-source libraries used
 
 - https://developers.themoviedb.org/3/getting-started/introduction
+- https://css-tricks.com/snippets/css/complete-guide-grid/
+- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ### Shout out
 
