@@ -47,7 +47,7 @@ Add your response here
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- https://developers.themoviedb.org/3/getting-started/introduction
 
 ### Shout out
 
