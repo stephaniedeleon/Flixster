@@ -64,6 +64,7 @@ async function displaySearched(event) {
     });
 }
 
+//generates the html
 function generateHTML(movie) {
 
     const uri = "https://image.tmdb.org/t/p/original/" + movie.poster_path;
@@ -85,8 +86,8 @@ function generateHTML(movie) {
     `;
 }
 
+//clears the moviesArea for other movies
 function clearHTML() {
-
     moviesArea.innerHTML = `
     `;
 }
@@ -103,15 +104,15 @@ window.onload = function () {
     displayMovies();
 }
 
-//MODAL Code
 
+//Popup Code
 const modal = document.querySelector(".modal");
 const movie_details = document.querySelector(".movie-content");
 const closeBtn = document.querySelector(".close");
 
 async function showDetails(id) {
 
-    console.log("clicked");
+    //displays the movie details...
     modal.style.display = "block";
 
     const apiURL = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + api_key + "&language=en-US";
@@ -123,17 +124,26 @@ async function showDetails(id) {
     const vote = details.vote_average;
     const overview = details.overview;
 
-
     movie_details.innerHTML = `
-        <img src="${uri}" alt="${title} poster"/>
-        ${title}
-        <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
-        ${overview}
+        <figure>
+            <img src="${uri}" alt="${title} poster"/>
+            <figcaption> 
+                <div>
+                    ${title}
+                </div>
+                <div>
+                    <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+                </div>
+                <div>
+                    ${overview}
+                </div>
+            </figcaption>
+        </figure>
     `
 }
 
-
-closeBtn.addEventListener("click", closeModal)
+ //hides the movie details
+closeBtn.addEventListener("click", closeModal);
 
 function closeModal() {
     modal.style.display = "none";
