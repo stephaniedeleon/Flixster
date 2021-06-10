@@ -8,6 +8,7 @@ const api_key = "9931bbb3d3b44293f08d37aeae81af82";
 let page = 1;
 let col = 0;
 
+//displaying current movies
 async function displayMovies() {
 
     const apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" +  api_key + "&language=en&page=" + page;
@@ -23,6 +24,33 @@ async function displayMovies() {
     });
 }
 
+//searches movies
+moviesForm.addEventListener("submit", displaySearched);
+
+async function displaySearched(event) {
+    event.preventDefault();
+
+    clearHTML();
+
+    const movieInput = event.target.movie;
+    const movie = movieInput.value;
+
+    if (movie == "") {
+        displayMovies();
+        return;
+    }
+
+    const apiURL = "https://api.themoviedb.org/3/search/movie?api_key=" +  api_key + "&query=" + movie + "&language=en&page=" + page;
+
+    const response = await fetch(apiURL);
+    const responseData = await response.json();
+
+    //displays the movies searched
+    responseData.results.forEach((movie) => {
+        generateHTML(movie);
+    });
+}
+
 function generateHTML(movie) {
 
     const uri = "https://image.tmdb.org/t/p/original/" + movie.poster_path;
@@ -31,8 +59,14 @@ function generateHTML(movie) {
 
     moviesArea.innerHTML += `
         <img src="${uri}" alt="${title}"/>
-        <p>${title} ${vote}</p> 
     `;
+
+    /*
+        <figure>
+            <img src="${uri}" alt="${title}"/>
+            <figcaption>${title} ${vote}</figcaption>
+        </figure>
+    */
 
     /*col++;
     if (col == 4) {
@@ -41,6 +75,12 @@ function generateHTML(movie) {
         col=0;
         console.log("in");
     }*/
+}
+
+function clearHTML() {
+
+    moviesArea.innerHTML = `
+    `;
 }
 
 //adding more movies...
