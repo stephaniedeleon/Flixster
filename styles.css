@@ -16,6 +16,7 @@ header {
     text-align: center;
 }
 
+/*includes more button*/
 .logo, .more {
     display: flex;
     align-items: center;
@@ -77,6 +78,14 @@ h3 {
 .movies-area img {
     width: 220px;
     border-radius: 6px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.movies-area img:hover {
+    cursor: pointer;
+    top: -10px;
 }
 
 
@@ -145,3 +154,39 @@ button:hover {
     cursor: pointer;
     border: 1px solid rgb(125, 125, 125);
 }
+
+/*Modal*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
+}
+
+.movie-content {
+    margin: auto;
+    padding-top: 50px;
+    height: fit-content;
+    width: 80%;
+}
+
+.movie-content img {
+    width: 500px;
+}
+
+.close {
+    margin-right: 80px;
+    float: right;
+}
+
+.close:hover {
+    background-color: rgb(57, 57, 57);
+    color: white;
+}
+

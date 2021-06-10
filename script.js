@@ -1,8 +1,6 @@
 const moviesForm = document.querySelector("form");
 const moviesArea = document.querySelector(".movies-area");
-
 const page_title = document.querySelector("#page-title")
-
 const moreBtn = document.querySelector(".more button");
 
 const api_key = "9931bbb3d3b44293f08d37aeae81af82";
@@ -31,7 +29,7 @@ async function displayMovies() {
     });
 }
 
-//searches movies
+//searches movies and displays them
 moviesForm.addEventListener("submit", displaySearched);
 
 async function displaySearched(event) {
@@ -69,21 +67,21 @@ async function displaySearched(event) {
 function generateHTML(movie) {
 
     const uri = "https://image.tmdb.org/t/p/original/" + movie.poster_path;
-    const title = movie.original_title; 
+    const title = movie.title; 
     const vote = movie.vote_average;
 
     moviesArea.innerHTML += `
-    <figure>
-        <img src="${uri}" alt="${title} poster"/>
-        <figcaption> 
-            <div class="movie-title">
-                ${title}
-            </div>
-            <div class="rating">
-                <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
-            </div>
-        </figcaption>
-    </figure>
+        <figure onclick="showDetails(${movie.id})";>
+            <img src="${uri}" alt="${title} poster"/>
+            <figcaption> 
+                <div class="movie-title">
+                    ${title}
+                </div>
+                <div class="rating">
+                    <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+                </div>
+            </figcaption>
+        </figure>
     `;
 }
 
@@ -94,14 +92,49 @@ function clearHTML() {
 }
 
 //adding more movies...
-
 moreBtn.addEventListener("click", getMore);
 async function getMore() {
     page++;
     displayMovies();
 }
 
+//displays movies as page loads
 window.onload = function () {
-    // run your function here to make it execute as soon as the page loads
     displayMovies();
+}
+
+//MODAL Code
+
+const modal = document.querySelector(".modal");
+const movie_details = document.querySelector(".movie-content");
+const closeBtn = document.querySelector(".close");
+
+async function showDetails(id) {
+
+    console.log("clicked");
+    modal.style.display = "block";
+
+    const apiURL = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + api_key + "&language=en-US";
+    const response = await fetch(apiURL);
+    const details = await response.json();
+
+    const uri = "https://image.tmdb.org/t/p/original/" + details.backdrop_path;
+    const title = details.original_title; 
+    const vote = details.vote_average;
+    const overview = details.overview;
+
+
+    movie_details.innerHTML = `
+        <img src="${uri}" alt="${title} poster"/>
+        ${title}
+        <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+        ${overview}
+    `
+}
+
+
+closeBtn.addEventListener("click", closeModal)
+
+function closeModal() {
+    modal.style.display = "none";
 }
