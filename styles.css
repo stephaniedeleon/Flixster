@@ -16,7 +16,7 @@ header {
     text-align: center;
 }
 
-.logo {
+.logo, .more {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -69,13 +69,13 @@ h3 {
 
 .movies-area {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
 }
 
 .movies-area img {
-    width: 200px;
+    width: 220px;
     border-radius: 6px;
 }
 
@@ -90,17 +90,6 @@ h3 {
     max-width: 200px;
     text-align: center;
     font-size: 17px;
-}
-
-
-@media screen and (max-width: 1400px) {
-    .movies-area {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .movies-area img {
-        width: 220px;
-        border-radius: 6px;
-    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -125,12 +114,6 @@ h3 {
 }
 
 @media screen and (max-width: 600px) {
-    .movies-area img {
-        width: 180px;
-    }
-}
-
-@media screen and (max-width: 500px) {
     .movies-area {
         grid-template-columns: 1fr;
     }
@@ -148,10 +131,6 @@ h3 {
 }
 
 /*More Button*/
-
-.more {
-    text-align: center;
-}
 
 .more button {
     margin-bottom: 50px;
