@@ -62,8 +62,14 @@ function generateHTML(movie) {
     moviesArea.innerHTML += `
     <figure>
         <img src="${uri}" alt="${title} poster"/>
-        <figcaption>${vote}</figcaption>
-        <figcaption>${title}</figcaption>
+        <figcaption> 
+            <div class="movie-title">
+                ${title}
+            </div>
+            <div class="rating">
+                <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+            </div>
+        </figcaption>
     </figure>
     `;
 
