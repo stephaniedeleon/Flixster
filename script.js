@@ -30,6 +30,8 @@ moviesForm.addEventListener("submit", displaySearched);
 async function displaySearched(event) {
     event.preventDefault();
 
+    page=1; //restarts the pages for now playing
+
     clearHTML();
 
     const movieInput = event.target.movie;
@@ -58,7 +60,11 @@ function generateHTML(movie) {
     const vote = movie.vote_average;
 
     moviesArea.innerHTML += `
-        <img src="${uri}" alt="${title}"/>
+    <figure>
+        <img src="${uri}" alt="${title} poster"/>
+        <figcaption>${vote}</figcaption>
+        <figcaption>${title}</figcaption>
+    </figure>
     `;
 
     /*
