@@ -1,6 +1,8 @@
 const moviesForm = document.querySelector("form");
 const moviesArea = document.querySelector(".movies-area");
 
+const page_title = document.querySelector("#page-title")
+
 const moreBtn = document.querySelector(".more button");
 
 const api_key = "9931bbb3d3b44293f08d37aeae81af82";
@@ -11,12 +13,17 @@ let col = 0;
 //displaying current movies
 async function displayMovies() {
 
+    moreBtn.classList.remove('hidden');
+
     const apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" +  api_key + "&language=en&page=" + page;
 
     const response = await fetch(apiURL);
     const responseData = await response.json();
     
-    console.log(responseData);
+    //changes the name to "Now playing"
+    page_title.innerHTML = `
+        Now playing
+    `;
     
     //displays the movies
     responseData.results.forEach((movie) => {
@@ -32,6 +39,7 @@ async function displaySearched(event) {
 
     page=1; //restarts the pages for now playing
 
+    moreBtn.classList.add('hidden');
     clearHTML();
 
     const movieInput = event.target.movie;
@@ -42,10 +50,15 @@ async function displaySearched(event) {
         return;
     }
 
-    const apiURL = "https://api.themoviedb.org/3/search/movie?api_key=" +  api_key + "&query=" + movie + "&language=en&page=" + page;
+    const apiURL = "https://api.themoviedb.org/3/search/movie?api_key=" +  api_key + "&query=" + movie + "&language=en";
 
     const response = await fetch(apiURL);
     const responseData = await response.json();
+
+    //changes the name of "Now playing" to the Search Item
+    page_title.innerHTML = `
+        Results for "${movie}"
+    `;
 
     //displays the movies searched
     responseData.results.forEach((movie) => {
@@ -72,21 +85,6 @@ function generateHTML(movie) {
         </figcaption>
     </figure>
     `;
-
-    /*
-        <figure>
-            <img src="${uri}" alt="${title}"/>
-            <figcaption>${title} ${vote}</figcaption>
-        </figure>
-    */
-
-    /*col++;
-    if (col == 4) {
-        moviesArea.innerHTML += `
-        `
-        col=0;
-        console.log("in");
-    }*/
 }
 
 function clearHTML() {
