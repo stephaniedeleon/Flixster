@@ -2,7 +2,7 @@
 
 Submitted by: **Stephanie De Leon**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **12.5** hours spent in total
 
 Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
@@ -20,10 +20,10 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 #### STRETCH FEATURES
 
 - [ ] Deploy website using GitHub Pages. 
-- [ ] Allow user to view more details about a movie within a popup.
-- [ ] Improve the user experience through CSS & animation.
-- [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
-- [ ] Implement anything else that you can get done to improve the app functionality!
+- [x] Allow user to view more details about a movie within a popup.
+- [x] Improve the user experience through CSS & animation.
+- [x] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
+- [x] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthough GIF
 
