@@ -88,8 +88,7 @@ function generateHTML(movie) {
 
 //clears the moviesArea for other movies
 function clearHTML() {
-    moviesArea.innerHTML = `
-    `;
+    moviesArea.innerHTML = ``;
 }
 
 //adding more movies...
@@ -108,7 +107,7 @@ window.onload = function () {
 //Popup Code
 const modal = document.querySelector(".modal");
 const movie_details = document.querySelector(".movie-content");
-const closeBtn = document.querySelector(".close");
+//const closeBtn = document.querySelector(".close");
 
 async function showDetails(id) {
 
@@ -123,18 +122,27 @@ async function showDetails(id) {
     const title = details.original_title; 
     const vote = details.vote_average;
     const overview = details.overview;
+    const duration = details.runtime;
+    const date = details.release_date;
 
-    movie_details.innerHTML = `
+    movie_details.innerHTML += `
         <figure>
+            <span class="close" onclick="closeModal()">&times;</span>
             <img src="${uri}" alt="${title} poster"/>
-            <figcaption> 
-                <div>
-                    ${title}
+            <figcaption>
+                <div class="mv-title"> 
+                    <div class="det-title">
+                        ${title}
+                    </div>
+                    <div id="rating">
+                        <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+                    </div>
                 </div>
-                <div>
-                    <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+                <div class="det-duration">
+                    ${duration} min | ${date}
                 </div>
-                <div>
+                <br>
+                <div class="det-overview">
                     ${overview}
                 </div>
             </figcaption>
@@ -142,9 +150,10 @@ async function showDetails(id) {
     `
 }
 
- //hides the movie details
-closeBtn.addEventListener("click", closeModal);
+//hides the movie details
+//closeBtn.addEventListener("click", closeModal);
 
 function closeModal() {
     modal.style.display = "none";
+    movie_details.innerHTML = ``;
 }

@@ -161,32 +161,53 @@ button:hover {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    overflow-y: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
+    background-color: rgba(255, 255, 255, 0.85); /* Black w/ opacity */
 }
 
 .movie-content {
-    margin: auto;
-    padding-top: 50px;
-    height: fit-content;
-    width: 80%;
+    overflow-y: auto; /* Enable scroll if needed */
+    display:flex;
+    justify-content: center;
+    color: black;
 }
 
-.movie-content img {
-    width: 500px;
+.movie-content figure, .movie-content img {
+    width: 47vw;
+}
+
+.mv-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.det-title {
+    font-size: 30px;
+}
+
+figure #rating, .det-duration {
+    color:rgb(80, 80, 80);
+    font-size: 16px;
+}
+
+.det-overview {
+    text-align: justify;
 }
 
 .close {
-    margin-right: 80px;
     float: right;
+    color: rgb(57, 57, 57);
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.close:hover {
-    background-color: rgb(57, 57, 57);
-    color: white;
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
 }
 
