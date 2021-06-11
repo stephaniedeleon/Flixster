@@ -177,8 +177,18 @@ button:hover {
     color: black;
 }
 
-.movie-content figure, .movie-content img {
+.movie-content figure, .movie-content img{
     width: 55vw;
+}
+
+.trailer iframe {
+    height: 40vh;
+    width: 52vw;
+    border: none;
+}
+
+.trailer {
+    text-align: center;
 }
 
 .mv-title {

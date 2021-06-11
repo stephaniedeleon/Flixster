@@ -107,23 +107,33 @@ window.onload = function () {
 //Popup Code
 const modal = document.querySelector(".modal");
 const movie_details = document.querySelector(".movie-content");
-//const closeBtn = document.querySelector(".close");
 
 async function showDetails(id) {
 
     //displays the movie details...
     modal.style.display = "block";
 
+    //url for movie details
     const apiURL = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + api_key + "&language=en-US";
     const response = await fetch(apiURL);
     const details = await response.json();
 
+    //getting movie details
     const uri = "https://image.tmdb.org/t/p/original/" + details.backdrop_path;
     const title = details.original_title; 
     const vote = details.vote_average;
     const overview = details.overview;
     const duration = details.runtime;
     const date = details.release_date;
+
+    //url for trailer
+    const trailerURL = "https://api.themoviedb.org/3/movie/" + id + "/videos?api_key=" + api_key + "&language=en-US";
+    const resp = await fetch(trailerURL);
+    const video = await resp.json();
+
+    //getting trailer link
+    const trailerKey = video.results[0].key;
+    const trailer = "https://www.youtube.com/embed/" + trailerKey;
 
     movie_details.innerHTML += `
         <figure>
@@ -145,13 +155,15 @@ async function showDetails(id) {
                 <div class="det-overview">
                     ${overview}
                 </div>
+                <br>
+                <br>
+                <div class="trailer">
+                    <iframe src="${trailer}" allow="fullscreen"></iframe>
+                </div>
             </figcaption>
         </figure>
     `
 }
-
-//hides the movie details
-//closeBtn.addEventListener("click", closeModal);
 
 function closeModal() {
     modal.style.display = "none";
