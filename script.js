@@ -135,7 +135,7 @@ async function showDetails(id) {
                         ${title}
                     </div>
                     <div id="rating">
-                        <span style="font-size:14px; color:yellow;"> &#9733;</span> ${vote} 
+                        <span style="font-size:14px; color:#F9A602;"> &#9733;</span> ${vote} 
                     </div>
                 </div>
                 <div class="det-duration">
