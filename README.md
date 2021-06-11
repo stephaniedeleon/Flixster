@@ -27,7 +27,9 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthough GIF
 
-<img src="demo.gif" width=250><br>
+Flixster Demo  | 
+:-------------------------:
+<img src="demo.gif"><br> |
 
 ### Reflection
 
