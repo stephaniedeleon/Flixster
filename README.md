@@ -53,4 +53,4 @@ Flixster Demo w/ responsiveness |
 - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ### Shout out
-Shoutout to TA Raahima and Paige for helping me; and to Henry and Maritza for being amazing people to work with and for giving me feedback!
+- Shoutout to TA Raahima and TA Paige for helping me; and to Henry and Maritza for being amazing people to work with and for giving me feedback!
