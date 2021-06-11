@@ -6,7 +6,6 @@ const moreBtn = document.querySelector(".more button");
 const api_key = "9931bbb3d3b44293f08d37aeae81af82";
 
 let page = 1;
-let col = 0;
 
 //displaying current movies
 async function displayMovies() {
@@ -28,6 +27,7 @@ async function displayMovies() {
         generateHTML(movie);
     });
 }
+
 
 //searches movies and displays them
 moviesForm.addEventListener("submit", displaySearched);
@@ -64,6 +64,7 @@ async function displaySearched(event) {
     });
 }
 
+
 //generates the html
 function generateHTML(movie) {
 
@@ -86,10 +87,12 @@ function generateHTML(movie) {
     `;
 }
 
+
 //clears the moviesArea for other movies
 function clearHTML() {
     moviesArea.innerHTML = ``;
 }
+
 
 //adding more movies...
 moreBtn.addEventListener("click", getMore);
@@ -97,6 +100,7 @@ async function getMore() {
     page++;
     displayMovies();
 }
+
 
 //displays movies as page loads
 window.onload = function () {
@@ -165,6 +169,7 @@ async function showDetails(id) {
     `
 }
 
+//closes the modal
 function closeModal() {
     modal.style.display = "none";
     movie_details.innerHTML = ``;
