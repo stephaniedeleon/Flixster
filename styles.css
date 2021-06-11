@@ -159,24 +159,26 @@ button:hover {
 
 .modal {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow-y: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(255, 255, 255, 0.85); /* Black w/ opacity */
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .movie-content {
-    overflow-y: auto; /* Enable scroll if needed */
+    padding-top: 40px;
+    padding-bottom: 50px;
+    overflow-y: auto;
     display:flex;
     justify-content: center;
     color: black;
 }
 
 .movie-content figure, .movie-content img {
-    width: 47vw;
+    width: 55vw;
 }
 
 .mv-title {
@@ -200,13 +202,12 @@ figure #rating, .det-duration {
 
 .close {
     float: right;
-    color: rgb(57, 57, 57);
+    color:rgb(80, 80, 80);
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
     color: black;
     cursor: pointer;
 }
